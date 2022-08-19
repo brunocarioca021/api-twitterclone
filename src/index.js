@@ -10,9 +10,9 @@ connectDatabase();
 app.use(cors());
 // app.use(express.json());
 
-app.get("/", (req, res) =>{
-  res.send({message: "Twitter Clone"});
-});
+// app.get("/", (req, res) =>{
+//   res.send({message: "Twitter Clone"});
+// });
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
