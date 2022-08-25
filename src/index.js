@@ -2,7 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const connectDatabase = require("./database/database");
+
 const userRoute = require("./routes/users.route");
+const authRoute = require("./routes/auth.route");
 
 const port = process.env.Port || 3001;
 const app = express();
@@ -13,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/users", userRoute);
+app.use("/auth", authRoute);
 
 app.get("/", (req, res) =>{
   res.send({message: "Twitter Clone"});
